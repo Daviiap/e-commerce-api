@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: e-commerce-api
+  name: offers-deployment
+  labels:
+    app: offers
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: offers
+  template:
+    metadata:
+      labels:
+        app: offers
+    spec:
+      containers:
+      - name: offers
+        image: offers-api
+        resources:
+            requests:
+              cpu: "0.125"
+              memory: "16M"
+            limits:
+              cpu: "0.25"
+              memory: "32M"

@@ -1,0 +1,6 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: e-commerce-api
+  labels:
+    name: e-commerce-api
